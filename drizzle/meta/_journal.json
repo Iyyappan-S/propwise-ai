@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1786611655921,
+      "tag": "0000_minor_switch",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1786611744490,
+      "tag": "0001_volatile_orphan",
+      "breakpoints": true
+    }
+  ]
+}
