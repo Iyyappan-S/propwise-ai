@@ -192,16 +192,6 @@ Accessibility         Good
 
 ---
 
-## 👨‍💻 Author
-
-### Iyyappan S
-
-**B.Tech Artificial Intelligence & Data Science**
-
-Interested in AI • Data Science • Full-Stack Development • Machine Learning • PropTech
-
----
-
 ## ⭐ Support
 
 If you like **PropWise AI**, consider giving the repository a ⭐
@@ -210,10 +200,3 @@ If you like **PropWise AI**, consider giving the repository a ⭐
 
 ---
 
-<p align="center">
-
-🏡 **PropWise AI**
-
-Built with React • TypeScript • Node.js • AI • Maps
-
-</p>
