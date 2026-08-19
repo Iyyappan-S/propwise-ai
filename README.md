@@ -1,49 +1,219 @@
-# PropWise AI
+# 🏡 PropWise AI
 
-PropWise AI is a full-stack real-estate location intelligence workspace for early-stage land and property research. Users can pin a location, enter site details, review an indicative valuation and scorecard, save the result, compare shortlisted properties, and open a cautious AI-generated research brief. A Manifest V3 Chrome Extension extracts visible listing details from supported pages and hands them back to the workspace.
+### AI-Powered Real Estate Location Intelligence Platform
 
-## Product boundaries
+<p align="center">
 
-> PropWise outputs are model-based estimates, not professional property valuations, financial advice, title searches, or government-record verification. Users must independently verify title, ownership, approvals, zoning, taxes, utilities, road rights, inspections, and current market evidence.
+📍 **Pin Location** → 📊 **Analyze Property** → 🤖 **AI Insights** → ⚖️ **Compare** → 💾 **Save**
 
-The current valuation engine is a transparent JavaScript development model. It is deliberately labeled as indicative until calibrated against a representative, licensed dataset. The application never claims to have verified legal status or live comparable transactions.
+</p>
 
-## Stack and structure
+<p align="center">
 
-The project uses React, Vite, Tailwind CSS, tRPC, Express, Drizzle ORM, MySQL/TiDB-compatible persistence, Manus OAuth, server-side built-in LLM access, Recharts, and the scaffold’s proxied Google Maps component. The Chrome Extension is a separate Manifest V3 package under `chrome-extension/`.
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square\&logo=react\&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square\&logo=typescript\&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square\&logo=vite\&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square\&logo=node.js\&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square\&logo=mysql\&logoColor=white)
+![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=flat-square\&logo=googlechrome\&logoColor=white)
 
-| Area | Location |
-| --- | --- |
-| Web UI | `client/src/App.tsx`, `client/src/components/` |
-| Typed backend | `server/routers.ts`, `server/db.ts` |
-| Schema and migration | `drizzle/schema.ts`, `drizzle/0001_volatile_orphan.sql` |
-| Extension | `chrome-extension/` |
-| Data notes | `dataset/README.md` |
-| Technical docs | `docs/` |
-| Tests | `server/*.test.ts`, `tests/` |
+</p>
 
-## Local setup
+---
 
-Install dependencies with `pnpm install`. The managed project provides the database URL, OAuth, session, built-in API, and frontend map proxy variables. Run `pnpm dev` for development, `pnpm check` for TypeScript validation, `pnpm test` for Vitest, and `pnpm build` for the production build.
+## 🚀 Overview
 
-Copy `server/.env.example` only when running outside the managed environment. Never commit real credentials. The web application uses the scaffold’s secure authentication flow; users do not provide a Gemini key to the browser or extension.
+**PropWise AI** is a full-stack real-estate research workspace that helps users evaluate land and property locations using:
 
-## Core flow
+* 📍 Interactive map-based analysis
+* 💰 Indicative property valuation
+* 📊 Property scorecard
+* 🤖 AI-generated research brief
+* ⚖️ Property comparison
+* 💾 Saved analyses
+* 🧩 Chrome Extension for listing extraction
 
-Open `/analyze`, click the map to pin a location, enter area/category/access details, and submit the analysis. The server creates a location, property, and analysis record, computes the scorecard, and calls the server-side LLM with structured inputs. The result includes estimated total value, estimated price per square foot, an indicative range, area classification, weighted factors, nearby-facility signals, investment score, future projection, risks, and AI research guidance.
+> **Note:** PropWise provides model-based estimates for early-stage research. It is **not** a professional valuation, legal verification, financial advice, or government-record verification system.
 
-## Extension installation
+---
 
-Open `chrome://extensions`, enable Developer mode, choose “Load unpacked,” and select the `chrome-extension/` directory. The extractor reads only visible page text and common semantic elements. Website-specific adapters can be added under `chrome-extension/services/` without changing the popup contract. The default dashboard handoff points at the local development URL and should be changed to the published workspace URL before store submission.
+## ✨ Features
 
-## Testing and limitations
+| Feature              | Description                                         |
+| -------------------- | --------------------------------------------------- |
+| 📍 Location Analysis | Pin and analyze a property location                 |
+| 💰 Valuation         | Estimate total value and ₹/sq.ft                    |
+| 📊 Scorecard         | Evaluate accessibility, location and growth factors |
+| 🤖 AI Brief          | Generate research guidance and risk insights        |
+| ⚖️ Compare           | Compare shortlisted properties                      |
+| 💾 Save              | Store property analyses                             |
+| 🧩 Extension         | Extract visible listing information                 |
 
-The repository includes the scaffold auth test and analysis engine tests. Add browser-level coverage in the project’s preferred test runner when a CI browser is available. The model metrics requested in the brief should only be reported after a real, licensed labeled dataset is supplied; this repository intentionally does not fabricate accuracy claims or historical property prices.
+---
 
-## Deployment
+## 🧠 How It Works
 
-The WebDev project is configured for managed hosting. The frontend and backend ship as one application, with environment variables injected by the platform. For an external deployment, use the generated production build, set the database URL, session secret, OAuth values, frontend URL, and built-in API values, then configure CORS and the extension’s dashboard URL. The Chrome Extension package remains store-ready subject to Chrome Web Store review and final production URLs.
+```mermaid
+flowchart LR
+    A[📍 Pin Location] --> B[🏠 Property Details]
+    B --> C[📊 Analysis Engine]
+    C --> D[💰 Valuation]
+    C --> E[⭐ Scorecard]
+    C --> F[📍 Location Signals]
+    D --> G[🤖 AI Research Brief]
+    E --> G
+    F --> G
+    G --> H[⚖️ Compare & Save]
+```
 
-## License
+---
 
-MIT for the source code unless a third-party data or map provider imposes additional terms. Review each data source license before adding it to `dataset/raw/`.
+## 🏗️ Tech Stack
+
+```text
+Frontend       → React + TypeScript + Vite + Tailwind
+Backend        → Node.js + Express + tRPC
+Database       → MySQL / TiDB
+ORM            → Drizzle ORM
+Authentication → Manus OAuth
+AI             → Server-side Built-in LLM
+Maps           → Google Maps Proxy
+Charts         → Recharts
+Extension      → Chrome Manifest V3
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+PropWise-AI/
+│
+├── client/              # React frontend
+├── server/              # Express + tRPC backend
+├── drizzle/             # Database schema & migrations
+├── chrome-extension/    # Manifest V3 extension
+├── dataset/             # Dataset documentation
+├── docs/                # Technical documentation
+└── tests/               # Tests
+```
+
+---
+
+## 🧩 Chrome Extension
+
+The Manifest V3 extension extracts **visible listing information** from supported property websites and sends it to the PropWise workspace.
+
+```text
+Property Website
+       ↓
+Chrome Extension
+       ↓
+Extract Listing Data
+       ↓
+PropWise AI
+       ↓
+Property Analysis
+```
+
+### Install
+
+```text
+1. Open chrome://extensions
+2. Enable Developer Mode
+3. Click "Load unpacked"
+4. Select chrome-extension/
+```
+
+---
+
+## ⚙️ Run Locally
+
+### Install
+
+```bash
+pnpm install
+```
+
+### Development
+
+```bash
+pnpm dev
+```
+
+### Check
+
+```bash
+pnpm check
+```
+
+### Test
+
+```bash
+pnpm test
+```
+
+### Build
+
+```bash
+pnpm build
+```
+
+---
+
+## 📊 Example Output
+
+```text
+Estimated Value       ₹42,50,000
+Price / sq.ft         ₹1,770
+Indicative Range      ₹36L – ₹49L
+Investment Score      82 / 100
+Area Classification   Urban
+Accessibility         Good
+```
+
+> Values are indicative development-model estimates and should not be treated as professional property valuations.
+
+---
+
+## 🛣️ Roadmap
+
+* [x] Interactive property map
+* [x] Indicative valuation
+* [x] Property scorecard
+* [x] AI research brief
+* [x] Save & compare
+* [x] Chrome Extension
+* [ ] More listing website adapters
+* [ ] Licensed property dataset
+* [ ] Comparable-property analysis
+* [ ] Model calibration
+* [ ] Advanced location intelligence
+
+---
+
+## 👨‍💻 Author
+
+### Iyyappan S
+
+**B.Tech Artificial Intelligence & Data Science**
+
+Interested in AI • Data Science • Full-Stack Development • Machine Learning • PropTech
+
+---
+
+## ⭐ Support
+
+If you like **PropWise AI**, consider giving the repository a ⭐
+
+**Research smarter. Compare better. Decide with evidence.**
+
+---
+
+<p align="center">
+
+🏡 **PropWise AI**
+
+Built with React • TypeScript • Node.js • AI • Maps
+
+</p>
