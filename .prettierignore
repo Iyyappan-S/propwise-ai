@@ -7,7 +7,7 @@ dist/
 build/
 *.dist
 
-# Generated files
+# Generated files 
 *.tsbuildinfo
 coverage/
 
