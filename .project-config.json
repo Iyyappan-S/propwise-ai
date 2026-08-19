@@ -1,0 +1,42 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "server",
+    "db",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://JeSsPPR27GwgCck.007f2b35fa8d:y0vTGuwp6aNGx1q6f52C@gateway05.us-east-1.prod.aws.tidbcloud.com:4000/a6ScsjrbhjF36DnAwdGri9?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "https://7f0548f6b28a1758d9bf7be630d36cb4.artifacts.cloudflare.net/git/prod/a6ScsjrbhjF36DnAwdGri9.git",
+    "expiration": "2026-08-14T09:00:39.995Z",
+    "token": "art_v2_x_38b2f6100729595bf4cd61daf87dea160af89552?expires=1786698039",
+    "backend": "GIT_BACKEND_ARTIFACTS"
+  },
+  "name": "propwise-ai",
+  "path": "/home/ubuntu/propwise-ai",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "dHeDbMdmNDLf4piNYmurDq",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "HFj3eH9WngC8FyzTLa5UiJ",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Iyyappan S",
+    "OWNER_OPEN_ID": "48xjDuKYUGFvSyo4EJ7HaN",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "1d8e4bb9-19d3-44a2-92f3-b97c5cad7e87",
+    "VITE_APP_ID": "a6ScsjrbhjF36DnAwdGri9",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "PropWise AI",
+    "VITE_FRONTEND_FORGE_API_KEY": "TqA5jcwzc3e6KBiVpxYfP2",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}

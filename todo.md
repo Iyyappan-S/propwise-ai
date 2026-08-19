@@ -50,3 +50,34 @@
 
 - [x] Audit /saved, /compare, /history, /profile, and /about for remaining white-dominant large surfaces and retone them if needed.
 - [x] Run visual verification on all remaining authenticated routes after the full palette audit.
+
+- [x] Create public GitHub repository Iyyappan-S/propwise-ai and upload the latest PropWise AI website source archive.
+- [x] Verify the uploaded repository contents and public URL.
+
+- [x] Replace the GitHub ZIP-only upload with the complete browsable PropWise AI folder and file structure.
+- [x] Remove the ZIP from the GitHub repository after the folder upload is verified.
+- [x] Verify the main folders, README, and repository history after the folder upload.
+
+- [x] Prepare a guided PropWise AI website demo covering landing, login, exact map pinning, analysis, dashboard, saved properties, comparison, and history.
+- [x] Capture representative demo screenshots and provide the live preview URL with usage notes.
+
+- [x] Prepare and deliver a written guided demo covering landing, login, exact manual pin placement, analysis results, dashboard, saved properties, comparison, and history flows.
+- [x] Provide the live preview URL plus concise usage notes for each major route and workflow.
+- [x] Capture or document evidence of the exact manual map-pin interaction in the demo, not only static route screenshots.
+
+- [x] Prepare a polished GitHub README.md for PropWise AI with features, architecture, setup, workflows, extension, testing, deployment, and limitations.
+
+- [x] Inventory the current TypeScript/TSX application files and define the JavaScript migration boundary.
+- [x] Convert most custom frontend and backend application code to JavaScript/JSX while preserving existing behavior.
+- [x] Update tooling, imports, tests, and documentation for the JavaScript-first codebase.
+- [x] Run tests, production build, and visual verification after the migration.
+
+- [x] Enable JavaScript module support for the remaining typed infrastructure checks without reintroducing application TypeScript.
+- [x] Rename backend, shared, and test outputs to conventional `.js` files and update Vitest discovery for JavaScript tests; retain `drizzle/schema.ts` as the intentional typed database boundary.
+- [x] Resolve build and runtime import compatibility after the migration.
+
+- [x] Remove the temporary migration script from the shipped project and document the resulting JavaScript-first code mix.
+- [x] Confirm the public README explains the JavaScript/JSX migration boundary and preserved typed infrastructure.
+
+- [ ] Update existing public repository Iyyappan-S/propwise-ai with the latest JavaScript-first PropWise AI source.
+- [ ] Verify the updated browsable folders, README, and latest repository commit.

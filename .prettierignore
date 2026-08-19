@@ -7,11 +7,11 @@ dist/
 build/
 *.dist
 
-# Generated files 
+# Generated files
 *.tsbuildinfo
 coverage/
 
-# Package files 
+# Package files
 package-lock.json
 pnpm-lock.yaml
 

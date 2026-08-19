@@ -1,394 +1,218 @@
-# 🏡 PropWise AI
+# PropWise AI
 
-### AI-Powered Real Estate Location Intelligence Platform
+> **Map-first property intelligence for early-stage land and real-estate research.**
 
-<p align="center">
+PropWise AI helps users investigate a property or land opportunity before making a decision. A user searches for a place or clicks the exact location on a map, enters the site details they know, and receives an explainable indicative analysis covering estimated value, price per square foot, location classification, access signals, investment score, future projection, risks, and questions to verify next.
 
-📍 **Pin Location** → 📊 **Analyze Property** → 🤖 **AI Insights** → ⚖️ **Compare** → 💾 **Save**
+The product is deliberately designed as a research aid rather than a professional valuation, title-search service, financial adviser, or government-record verification system.
 
-</p>
+## Product preview
 
-<p align="center">
+The live project preview is available at:
 
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square\&logo=react\&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square\&logo=typescript\&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square\&logo=vite\&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square\&logo=node.js\&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square\&logo=mysql\&logoColor=white)
-![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=flat-square\&logo=googlechrome\&logoColor=white)
+**<https://3000-it4adxo49jd8n32233dwt-e2d1ec02.us4.manus.computer/>**
 
-</p>
+The public source repository is available at:
 
----
+**<https://github.com/Iyyappan-S/propwise-ai>**
 
-## 🚀 Overview
+## Core capabilities
 
-**PropWise AI** is a full-stack real-estate research workspace that helps users evaluate land and property locations using:
+| Capability | Description |
+| --- | --- |
+| Exact map pinning | Search can center the map, but only an explicit user click on the map authorizes the price calculation coordinates. |
+| Indicative valuation | Computes a transparent model estimate, estimated price per square foot, and an indicative range from entered site inputs. |
+| Location scorecard | Presents area classification, access, demand, growth, and investment signals in a readable scorecard. |
+| AI research advisor | Produces cautious, structured guidance and due-diligence prompts through a server-side AI integration. |
+| Saved properties | Stores analyzed properties in a private shortlist for later review. |
+| Comparison workspace | Compares two to four saved properties using score-based decision-support logic. |
+| Analysis history | Preserves the research trail so earlier analyses can be revisited. |
+| Responsive workspace | Provides a landing page, secure login flow, authenticated dashboard shell, mobile navigation, and responsive analysis pages. |
+| Chrome Extension | Includes a Manifest V3 extension that extracts visible listing details and hands them to the PropWise workspace. |
 
-* 📍 Interactive map-based analysis
-* 💰 Indicative property valuation
-* 📊 Property scorecard
-* 🤖 AI-generated research brief
-* ⚖️ Property comparison
-* 💾 Saved analyses
-* 🧩 Chrome Extension for listing extraction
+## Why the exact pin matters
 
-> **Note:** PropWise provides model-based estimates for early-stage research. It is **not** a professional valuation, legal verification, financial advice, or government-record verification system.
+PropWise treats the manual map click as the authoritative location input. A searched address is provisional: it may update the visible address or center the map, but it does not satisfy the calculation requirement. The analysis action remains gated until the user clicks the exact site location. This keeps the location-dependent estimate tied to an explicit user decision rather than an unverified search result.
 
----
-
-## ✨ Features
-
-| Feature              | Description                                         |
-| -------------------- | --------------------------------------------------- |
-| 📍 Location Analysis | Pin and analyze a property location                 |
-| 💰 Valuation         | Estimate total value and ₹/sq.ft                    |
-| 📊 Scorecard         | Evaluate accessibility, location and growth factors |
-| 🤖 AI Brief          | Generate research guidance and risk insights        |
-| ⚖️ Compare           | Compare shortlisted properties                      |
-| 💾 Save              | Store property analyses                             |
-| 🧩 Extension         | Extract visible listing information                 |
-
----
-
-## 🧠 How It Works
+## Application flow
 
 ```mermaid
 flowchart LR
-    A[📍 Pin Location] --> B[🏠 Property Details]
-    B --> C[📊 Analysis Engine]
-    C --> D[💰 Valuation]
-    C --> E[⭐ Scorecard]
-    C --> F[📍 Location Signals]
-    D --> G[🤖 AI Research Brief]
-    E --> G
-    F --> G
-    G --> H[⚖️ Compare & Save]
+    A[Landing page] --> B[Secure sign in]
+    B --> C[Workspace dashboard]
+    C --> D[Search or inspect a place]
+    D --> E[Click exact map location]
+    E --> F[Enter site details]
+    F --> G[Run indicative analysis]
+    G --> H[Review scorecard and AI notes]
+    H --> I[Save property]
+    I --> J[Compare shortlist or revisit history]
 ```
 
----
+## Main routes
 
-## 🛠️ Tech Stack
+| Route | Purpose |
+| --- | --- |
+| `/` | Public landing page and product introduction. |
+| `/login` | Dedicated secure sign-in page. |
+| `/analyze` | Exact-pin analysis workflow and site input form. |
+| `/saved` | Saved-property shortlist. |
+| `/compare` | Select and compare two to four properties. |
+| `/history` | Previously generated analyses. |
+| `/profile` | Authenticated user profile view. |
+| `/about` | Methodology, product boundaries, and limitations. |
 
-### 🎨 Frontend
+Workspace routes require authentication through the project’s existing secure session flow.
 
-<p>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Recharts-FF6384?style=for-the-badge"/>
-</p>
+## Technical architecture
 
-**React • TypeScript • Vite • Tailwind CSS • Recharts**
-
-Used for building the responsive property-analysis dashboard, interactive forms, scorecards, charts, and map-based workspace.
-
----
-
-### ⚙️ Backend
-
-<p>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
-  <img src="https://img.shields.io/badge/tRPC-2596BE?style=for-the-badge&logo=trpc&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Drizzle_ORM-C5F74F?style=for-the-badge&logo=drizzle&logoColor=black"/>
-</p>
-
-**Node.js • Express • tRPC • Drizzle ORM**
-
-Provides type-safe APIs, property analysis services, authentication handling, valuation logic, and database operations.
-
----
-
-### 🗄️ Database
-
-<p>
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TiDB-8A2BE2?style=for-the-badge"/>
-</p>
-
-**MySQL / TiDB-compatible Database**
-
-Stores:
-
-* 👤 Users
-* 📍 Locations
-* 🏠 Properties
-* 📊 Analyses
-* ⭐ Scorecards
-* ⚖️ Comparisons
-
----
-
-### 🤖 AI & Intelligence
-
-<p>
-  <img src="https://img.shields.io/badge/LLM-AI_Research-8E44AD?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/RAG-Research-FF6B35?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Embeddings-Vector_Search-2E86DE?style=for-the-badge"/>
-</p>
-
-**Server-side LLM • Structured AI Analysis • Research Guidance**
-
-AI is used to generate:
-
-* 🔎 Property research briefs
-* ⚠️ Risk signals
-* 📈 Future considerations
-* 🧠 Research recommendations
-* 📋 Due-diligence guidance
-
-> AI outputs are presented as research assistance and do not represent professional valuation or legal verification.
-
----
-
-### 🗺️ Maps & Location Intelligence
-
-<p>
-  <img src="https://img.shields.io/badge/Google_Maps-4285F4?style=for-the-badge&logo=googlemaps&logoColor=white"/>
-  <img src="https://img.shields.io/badge/GIS-Location_Intelligence-2E8B57?style=for-the-badge"/>
-</p>
-
-**Google Maps • Location Coordinates • Geographic Analysis**
-
-Used for:
-
-```text
-📍 Location Pinning
-🗺️ Interactive Maps
-📌 Latitude / Longitude
-🏙️ Area Classification
+```mermaid
+flowchart TB
+    Browser[React + Vite frontend] --> RPC[tRPC client]
+    Browser --> Maps[Map component and location interaction]
+    Browser --> OAuth[Secure OAuth session]
+    RPC --> Server[Express + tRPC server]
+    Server --> DB[(MySQL/TiDB via Drizzle ORM)]
+    Server --> AI[Server-side built-in AI integration]
+    Server --> Storage[S3-compatible storage helpers]
+    Extension[Manifest V3 Chrome Extension] --> Bridge[Extension analysis bridge]
+    Bridge --> Server
 ```
 
----
+### Repository structure
 
-### 🧩 Chrome Extension
+| Area | Location |
+| --- | --- |
+| Frontend application | `client/src/App.jsx`, `client/src/pages/`, `client/src/components/` |
+| Global design system | `client/src/index.css` |
+| Authenticated workspace shell | `client/src/components/DashboardLayout.jsx` |
+| Backend procedures | `server/routers.js` |
+| Database query helpers | `server/db.js` |
+| Database schema and migrations | `drizzle/schema.ts`, `drizzle/migrations/` |
+| Server infrastructure | `server/_core/` |
+| Chrome Extension | `chrome-extension/` |
+| Technical documentation | `docs/` |
+| Dataset and model notes | `dataset/` |
+| Automated tests | `server/*.test.js`, `tests/` |
 
-<p>
-  <img src="https://img.shields.io/badge/Chrome-Manifest_V3-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-</p>
+## Technology stack
 
-**Chrome Manifest V3 • Content Scripts • Background Service Worker**
+The application uses React, Vite, Tailwind CSS, Express, tRPC, Drizzle ORM, MySQL/TiDB-compatible persistence, Manus OAuth, Recharts, Lucide icons, and the project’s proxied map integration. The Chrome Extension uses Manifest V3 with a popup, content extractor, background service worker, options page, and store-oriented metadata.
 
-The extension extracts visible listing information from supported property websites and sends it to the PropWise workspace.
+## JavaScript-first codebase
 
-```text
-Property Website
-      ↓
-Content Script
-      ↓
-Listing Extraction
-      ↓
-Data Normalization
-      ↓
-PropWise Workspace
-```
+Approximately 80% or more of the custom application source is now JavaScript/JSX. Frontend pages, reusable UI components, hooks, tRPC client bindings, backend procedures, database helpers, shared utilities, and tests use `.js` or `.jsx`. The remaining TypeScript files are limited primarily to the scaffold’s server infrastructure and the database schema types that support the authentication and runtime boundary. This keeps the product code approachable for JavaScript developers without rewriting stable framework plumbing.
 
----
+## Local development
 
-### 🔐 Authentication & Security
+### Prerequisites
 
-**Manus OAuth • Secure Sessions • Environment Variables • Input Validation**
+Install Node.js, pnpm, and a MySQL/TiDB-compatible database. The managed project normally supplies authentication, database, built-in API, storage, and map-related environment variables through the project runtime.
 
-Security principles:
-
-```text
-🔐 OAuth Authentication
-🛡️ Server-side API Access
-🔑 Protected Credentials
-✅ Input Validation
-🚫 No API Keys in Browser
-🚫 No API Keys in Extension
-```
-
----
-
-### 🧪 Testing & Quality
-
-<p>
-  <img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TypeScript_Check-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
-</p>
-
-**Vitest • TypeScript Validation • Unit Testing**
+### Installation
 
 ```bash
-pnpm check
-pnpm test
-pnpm build
-```
-
----
-
-### 🚀 Development & Deployment
-
-**pnpm • Git • Managed Hosting • Environment Variables**
-
-```text
-Development
-    ↓
-TypeScript Check
-    ↓
-Unit Tests
-    ↓
-Production Build
-    ↓
-Deployment
-```
-
----
-
-### 📦 Complete Stack
-
-```text
-┌──────────────────────────────────────────────┐
-│                  PROPWlSE AI                 │
-├──────────────────────────────────────────────┤
-│                                              │
-│ 🎨 Frontend                                  │
-│ React • TypeScript • Vite • Tailwind         │
-│                                              │
-│ ⚙️ Backend                                   │
-│ Node.js • Express • tRPC • Drizzle           │
-│                                              │
-│ 🗄️ Database                                  │
-│ MySQL / TiDB                                 │
-│                                              │
-│ 🤖 AI                                        │
-│ Server-side LLM • AI Research                │
-│                                              │
-│ 🗺️ Location Intelligence                    │
-│ Google Maps • Geographic Analysis            │
-│                                              │
-│ 🧩 Browser Intelligence                      │
-│ Chrome Manifest V3                           │
-│                                              │
-│ 🔐 Authentication                             │
-│ Manus OAuth • Secure Sessions                │
-│                                              │
-│ 🧪 Testing                                   │
-│ Vitest • TypeScript Validation               │
-│                                              │
-└──────────────────────────────────────────────┘
-```
-
----
-
-## 📂 Project Structure
-
-```text
-PropWise-AI/
-│
-├── client/              # React frontend
-├── server/              # Express + tRPC backend
-├── drizzle/             # Database schema & migrations
-├── chrome-extension/    # Manifest V3 extension
-├── dataset/             # Dataset documentation
-├── docs/                # Technical documentation
-└── tests/               # Tests
-```
-
----
-
-## 🧩 Chrome Extension
-
-The Manifest V3 extension extracts **visible listing information** from supported property websites and sends it to the PropWise workspace.
-
-```text
-Property Website
-       ↓
-Chrome Extension
-       ↓
-Extract Listing Data
-       ↓
-PropWise AI
-       ↓
-Property Analysis
-```
-
-### Install
-
-```text
-1. Open chrome://extensions
-2. Enable Developer Mode
-3. Click "Load unpacked"
-4. Select chrome-extension/
-```
-
----
-
-## ⚙️ Run Locally
-
-### Install
-
-```bash
+git clone https://github.com/Iyyappan-S/propwise-ai.git
+cd propwise-ai
 pnpm install
 ```
 
-### Development
+For an external environment, copy the provided non-secret template and supply the required values through your deployment platform rather than committing secrets:
+
+```bash
+cp server/.env.example .env
+```
+
+### Run the development server
 
 ```bash
 pnpm dev
 ```
 
-### Check
+### Validate the project
 
 ```bash
 pnpm check
-```
-
-### Test
-
-```bash
 pnpm test
-```
-
-### Build
-
-```bash
 pnpm build
 ```
 
----
+The project uses Vitest for automated checks. The suite covers core authentication behavior, analysis logic, comparison validation, and repository-level contracts for the frontend and extension surfaces.
 
-## 📊 Example Output
+## Database workflow
 
-```text
-Estimated Value       ₹42,50,000
-Price / sq.ft         ₹1,770
-Indicative Range      ₹36L – ₹49L
-Investment Score      82 / 100
-Area Classification   Urban
-Accessibility         Good
+The project follows a schema-first workflow:
+
+```bash
+pnpm drizzle-kit generate
 ```
 
-> Values are indicative development-model estimates and should not be treated as professional property valuations.
+Review the generated migration before applying it. In the managed environment, database migrations are applied through the project database workflow. Do not use destructive SQL against production data without a verified backup and an explicit migration plan.
 
----
+## Chrome Extension
 
-## 🛣️ Roadmap
+The extension source is under `chrome-extension/`. It is a Manifest V3 package with this flow:
 
-* [x] Interactive property map
-* [x] Indicative valuation
-* [x] Property scorecard
-* [x] AI research brief
-* [x] Save & compare
-* [x] Chrome Extension
-* [ ] More listing website adapters
-* [ ] Licensed property dataset
-* [ ] Comparable-property analysis
-* [ ] Model calibration
-* [ ] Advanced location intelligence
+1. The content extractor reads visible listing details from a supported page.
+2. The background service worker coordinates extraction, context-menu actions, and storage.
+3. The popup presents extracted details and requests an indicative PropWise analysis.
+4. The user can open the full workspace for deeper analysis, saving, and comparison.
 
----
+To load it locally in Chrome:
 
-## ⭐ Support
+1. Open `chrome://extensions`.
+2. Enable **Developer mode**.
+3. Select **Load unpacked**.
+4. Choose the repository’s `chrome-extension/` directory.
+5. Open a supported listing page and use the extension popup or context-menu action.
 
-If you like **PropWise AI**, consider giving the repository a ⭐
+The Chrome Web Store listing materials, privacy notes, permission explanations, icons, and screenshots are documented in `chrome-extension/store-listing.md` and `chrome-extension/README.md`.
 
-**Research smarter. Compare better. Decide with evidence.**
+## AI and valuation boundaries
 
----
+PropWise uses a transparent development valuation model and a server-side AI explanation layer. The output is intentionally labeled **indicative**. It should not be treated as a guaranteed market price, professional appraisal, investment recommendation, title opinion, zoning confirmation, tax determination, or inspection report.
 
+Users should independently verify ownership, title, encumbrances, zoning, land use, permits, approvals, road rights, utilities, taxes, environmental conditions, flood risk, survey boundaries, construction quality, and current comparable evidence before acting.
+
+Nearby-facility and location signals may use development heuristics or configured data sources. They must be calibrated and independently verified before being treated as production-grade market intelligence.
+
+## Security and privacy
+
+The application keeps AI credentials server-side and does not expose provider keys to the browser or extension. Authentication uses the project’s secure OAuth/session flow. Real credentials must be supplied through environment configuration or the deployment platform’s secret manager; never commit `.env` files, API keys, session secrets, or database credentials.
+
+## Deployment
+
+The project is designed for the managed WebDev runtime. Before publishing:
+
+1. Confirm the database schema and migration are synchronized.
+2. Configure required secrets through the project settings.
+3. Run `pnpm check`, `pnpm test`, and `pnpm build`.
+4. Review authentication redirects, map configuration, AI fallbacks, and storage behavior.
+5. Create a project checkpoint.
+6. Use the project’s Publish workflow to deploy the verified checkpoint.
+
+For external hosting, confirm compatibility with the project’s OAuth callback URLs, server runtime, database connection, storage configuration, and built-in API integrations.
+
+## Project documentation
+
+| Document | Purpose |
+| --- | --- |
+| `docs/demo.md` | Guided website demo, live preview URL, route walkthrough, and exact-pin explanation. |
+| `docs/architecture.md` | Architecture, API, database, ML, AI, extension, data-flow, and deployment notes. |
+| `docs/environment.md` | Environment and deployment configuration guidance. |
+| `docs/env.example` | Non-secret environment placeholder list. |
+| `dataset/README.md` | Dataset policy, licensing expectations, synthetic-data separation, and model limitations. |
+| `chrome-extension/store-listing.md` | Chrome Web Store listing copy, permissions, privacy disclosure, and publication checklist. |
+
+## License
+
+Add the project’s chosen license before public redistribution. Until a license file is added, all rights remain with the copyright holder and repository owner.
+
+## References
+
+[1]: https://react.dev/ "React documentation"
+[2]: https://vite.dev/ "Vite documentation"
+[3]: https://trpc.io/ "tRPC documentation"
+[4]: https://orm.drizzle.team/ "Drizzle ORM documentation"
+[5]: https://developer.chrome.com/docs/extensions/ "Chrome Extensions documentation"
+[6]: https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories "GitHub repository documentation"
