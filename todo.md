@@ -81,3 +81,5 @@
 
 - [ ] Update existing public repository Iyyappan-S/propwise-ai with the latest JavaScript-first PropWise AI source.
 - [ ] Verify the updated browsable folders, README, and latest repository commit.
+
+- [ ] Remove all ZIP archives from the existing GitHub repository so the repository presents only browsable source folders and files.
