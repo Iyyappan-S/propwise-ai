@@ -159,7 +159,6 @@ Used for:
 🗺️ Interactive Maps
 📌 Latitude / Longitude
 🏙️ Area Classification
-📏 Location-based Signals
 ```
 
 ---
