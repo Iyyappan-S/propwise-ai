@@ -6,11 +6,6 @@ import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-// =============================================================================
-// Manus Debug Collector - Vite Plugin
-// Writes browser logs directly to files, trimmed when exceeding size limit
-// =============================================================================
-
 const PROJECT_ROOT = import.meta.dirname;
 const LOG_DIR = path.join(PROJECT_ROOT, ".manus-logs");
 const MAX_LOG_SIZE_BYTES = 1 * 1024 * 1024; // 1MB per log file
