@@ -83,14 +83,14 @@ function vitePluginManusDebugCollector(): Plugin {
     },
 
     configureServer(server: ViteDevServer) {
-      // POST /__manus__/logs: Browser sends logs (written directly to files)
+  
       server.middlewares.use("/__manus__/logs", (req, res, next) => {
         if (req.method !== "POST") {
           return next();
         }
 
         const handlePayload = (payload: any) => {
-          // Write logs directly to files
+
           if (payload.consoleLogs?.length > 0) {
             writeToLogFile("browserConsole", payload.consoleLogs);
           }
