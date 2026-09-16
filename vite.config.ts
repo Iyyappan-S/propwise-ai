@@ -39,7 +39,7 @@ function trimLogFile(logPath: string, maxSize: number) {
 
     fs.writeFileSync(logPath, keptLines.join("\n"), "utf-8");
   } catch {
-    /* ignore trim errors */
+  
   }
 }
 
